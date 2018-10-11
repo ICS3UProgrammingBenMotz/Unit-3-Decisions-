@@ -16,7 +16,7 @@ namespace GuessGameBenM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GuessGameForm());
+            Application.Run(new frmGuessGame());
         }
     }
 }
