@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Created by: Ben M
+ * Created on: 17-10-2018
+ * Created for: ICS3U Programming
+ * Daily Assignment – Day #18 - Rock Paper Scissors
+ * This program plays rock paper scissors with the user
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +19,7 @@ namespace RockPaperScissors_BenM_
 {
     public partial class frmRockPaperScissors : Form
     {
-       
+
 
         //Get Random Number
         const int MIN_NUM = 1;
@@ -24,9 +31,9 @@ namespace RockPaperScissors_BenM_
             InitializeComponent();
 
             lblWhoWins.Hide();
-      
+
             //Creates random number generator
-            Random randomNumberGenerator = new Random();
+            randomNumberGenerator = new Random();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -36,8 +43,8 @@ namespace RockPaperScissors_BenM_
 
         private void frmRockPaperScissors_Load(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void btnCheckAns_Click(object sender, EventArgs e)
@@ -54,18 +61,18 @@ namespace RockPaperScissors_BenM_
             else if (radUserPaper.Checked == true)
             {
                 playerchoice = PAPER;
-            } 
-           else if (radUserScissors.Checked == true)
+            }
+            else if (radUserScissors.Checked == true)
             {
                 playerchoice = SCISSORS;
             }
-           else
+            else
             {
                 playerchoice = 0;
             }
 
             //Generates random number between 1 and 3
-            computerchoice = randomNumberGenerator.Next(MIN_NUM, MAX_NUM+1);
+            computerchoice = randomNumberGenerator.Next(MIN_NUM, MAX_NUM + 1);
 
             //Set the radio button for the computer for the computer's choice          
             if (computerchoice == ROCK)
@@ -80,7 +87,7 @@ namespace RockPaperScissors_BenM_
             {
                 this.radComputerScissors.Checked = true;
             }
-          
+
             //Checks who wins
 
             if (computerchoice == ROCK)
@@ -94,9 +101,52 @@ namespace RockPaperScissors_BenM_
                 {
                     this.lblWhoWins.Show();
                     this.lblWhoWins.Text = "You Win!";
+
+                }
+                else if (playerchoice == SCISSORS)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "You Lose";
                 }
             }
-        
+            if (computerchoice == PAPER)
+            {
+                if (playerchoice == ROCK)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "You Lose";
+                }
+                else if (playerchoice == PAPER)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "Tie";
+
+                }
+                else if (playerchoice == SCISSORS)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "You Win!";
+                }
+            }
+            if (computerchoice == SCISSORS)
+            {
+                if (playerchoice == ROCK)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "You Win!";
+                }
+                else if (playerchoice == PAPER)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "You Lose";
+
+                }
+                else if (playerchoice == SCISSORS)
+                {
+                    this.lblWhoWins.Show();
+                    this.lblWhoWins.Text = "Tie";
+                }
+            }
         }
     }
 }
