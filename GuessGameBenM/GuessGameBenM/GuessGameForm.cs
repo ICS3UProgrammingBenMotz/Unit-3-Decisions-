@@ -55,6 +55,7 @@ namespace GuessGameBenM
                 this.lblRightWrong.Text = "Wrong, try again.";
                 this.picRightWrong.Image = Properties.Resources.red_x;
                 
+                
             }
 
         }
