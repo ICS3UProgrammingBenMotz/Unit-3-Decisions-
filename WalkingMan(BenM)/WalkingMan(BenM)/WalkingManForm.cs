@@ -16,5 +16,17 @@ namespace WalkingMan_BenM_
         {
             InitializeComponent();
         }
+
+        private void WalkingManForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPressMe_Click(object sender, EventArgs e)
+        {
+            //Declares Loops and Consts
+            const byte MAX_FRAME = 10;
+
+        }
     }
 }
