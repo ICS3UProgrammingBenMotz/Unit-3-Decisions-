@@ -16,5 +16,19 @@ namespace FactorialCounter_BenM_
         {
             InitializeComponent();
         }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            //Declares variables
+            double aNumb, factorialNumb;
+
+            //Clears list box
+            this.lstFactorials.Items.Clear();
+       
+
+            
+
+
+        }
     }
 }
