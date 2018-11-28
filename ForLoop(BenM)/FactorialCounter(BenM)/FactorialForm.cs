@@ -38,16 +38,13 @@ namespace FactorialCounter_BenM_
             aNumb = Convert.ToDouble(txtNumb.Text);
 
             factorialAns = 1;
-
-            factorialCounter = 0;
             //Gets the factorials
-            do
+            for (factorialCounter=1;factorialCounter  <= aNumb; factorialCounter++)
             {
-                factorialCounter++;
                 lstFactorials.Items.Add(factorialCounter);
-                factorialAns = factorialCounter * factorialAns;
+                factorialAns = factorialAns * factorialCounter;
 
-            } while (factorialCounter < aNumb);
+            }
 
             //Displays stuff in the label
             this.lblFactorialAns.Show();
